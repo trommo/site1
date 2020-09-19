@@ -16,7 +16,7 @@ services:
     image: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PWD}
     volumes:
       - ${DB_PATH_HOST}:/var/lib/mysql
 
@@ -24,5 +24,5 @@ services:
     image: adminer
     restart: always
     ports: 
-      - 6080:8080
+      - ${ADMINER_EXT_PORT}:8080
 
